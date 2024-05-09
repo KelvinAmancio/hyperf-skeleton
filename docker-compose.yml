@@ -1,10 +1,10 @@
 services:
 
   hyperf-skeleton:
-    container_name: hyperf-skeleton
-    image: hyperf-skeleton
     build:
       context: .
+    container_name: hyperf-skeleton
+    image: hyperf-skeleton
     volumes:
       - ./:/opt/www
     ports:

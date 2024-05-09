@@ -18,8 +18,12 @@ ENV TIMEZONE=${timezone:-"America/Sao_Paulo"} \
     APP_ENV=prod \
     SCAN_CACHEABLE=(true)
 
+COPY xdebug.ini /etc/php83/conf.d/00_xdebug.ini
+
 # update
 RUN set -ex \
+    && apk update \
+    && apk add php83-xdebug \
     # show php version and extensions
     && php -v \
     && php -m \
